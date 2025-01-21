@@ -10,4 +10,9 @@ public class HelloWorldController {
     public String helloWorld() {
         return "Hello from method";
     }
+
+    @GetMapping(path = "/test")
+    public String test() {
+        return "Hello from test method";
+    }
 }
