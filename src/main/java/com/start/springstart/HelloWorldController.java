@@ -1,14 +1,16 @@
 package com.start.springstart;
 
+import com.start.springstart.services.ColorPrinter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloWorldController {
 
-    @GetMapping(path = "/hello")
+    @GetMapping(path = "/print")
     public String helloWorld() {
-        return "Hello from method";
+        ColorPrinter colorPrinter = new ColorPrinterImpl();
+        return colorPrinter.print();
     }
 
     @GetMapping(path = "/test")
